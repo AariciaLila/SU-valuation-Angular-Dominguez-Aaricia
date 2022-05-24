@@ -1,2 +1,14 @@
-<app-statistiques [statistique]="mesStatistiques"></app-statistiques>
-<app-statistiques [statistique]="mesAutresStatistiques"></app-statistiques>
+<div>
+  <div *ngFor="let statistique of statistique">
+    <app-statistiques [statistique]="statistique"></app-statistiques>
+  </div>
+  <div id="div2" style="visibility: hidden" *ngFor="let statistique2 of statistique2">
+    <app-statistiques [statistique]="statistique2"></app-statistiques>
+</div>
+<script type="text/javascript">
+function showDiv2() {
+  document.getElementById("div2").style.visibility = "visible";
+}
+setTimeout("showDiv2()", 5000);
+</script>
+</div>

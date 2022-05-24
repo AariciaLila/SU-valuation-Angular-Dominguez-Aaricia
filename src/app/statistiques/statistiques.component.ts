@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Statistique } from '../model/statistique';
 
 @Component({
@@ -8,6 +8,7 @@ import { Statistique } from '../model/statistique';
 })
 export class StatistiquesComponent implements OnInit {
   @Input() statistique!: Statistique;
+  @Output() demandeSuppression : EventEmitter<void> = new EventEmitter();
 
   identifiant!: string;
   titre!: string;
@@ -16,5 +17,9 @@ export class StatistiquesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {}
+
+  onDeleteStat(){
+    this.demandeSuppression.emit();
+  }
 
 }

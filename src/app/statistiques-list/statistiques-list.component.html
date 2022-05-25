@@ -1,1 +1,4 @@
-<app-statistiques *ngFor="let statistique of statistiques" [statistique]="statistique" (demandeSuppression)="supprimerProduit(statistique)"></app-statistiques>
+<div class="card col-md-3 p-0 m-2" *ngFor="let s of statistiquesService.tabStatistiques">
+<app-statistiques [statistique]="s" (demandeSuppression)="supprimerProduit(s)">
+</app-statistiques>
+</div>

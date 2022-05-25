@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Statistique } from '../model/statistique';
 import { StatistiquesService } from '../services/statistiques.service';
 
@@ -8,18 +8,16 @@ import { StatistiquesService } from '../services/statistiques.service';
   styleUrls: ['./statistiques-list.component.css']
 })
 export class StatistiquesListComponent implements OnInit {
-  statistiques!: Statistique[];
+  public statistiquesService : StatistiquesService;
 
-  constructor(private statistiquesService: StatistiquesService) { }
+  constructor(statistiquesService: StatistiquesService) {this.statistiquesService = statistiquesService }
 
-  ngOnInit(){
-    this.statistiques = this.statistiquesService.statistiques;
-  }
+  ngOnInit(){}
 
   supprimerProduit(uneStatistique : Statistique) {
-    let positionStatistique = this.statistiquesService.statistiques.indexOf(uneStatistique);
+    let positionStatistique = this.statistiquesService.tabStatistiques.indexOf(uneStatistique);
     if (positionStatistique != -1) {
-      this.statistiquesService.statistiques.splice(positionStatistique, 1);
+      this.statistiquesService.tabStatistiques.splice(positionStatistique, 1);
     }
   }
 

@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { StatistiqueBack } from '../model/apiTypes';
 import { Statistique } from '../model/statistique';
 
 @Component({
@@ -10,11 +12,7 @@ export class StatistiquesComponent implements OnInit {
   @Input() statistique!: Statistique;
   @Output() demandeSuppression : EventEmitter<void> = new EventEmitter();
 
-  identifiant!: string;
-  titre!: string;
-  valeur!: string
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {}
 

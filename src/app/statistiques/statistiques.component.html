@@ -1,6 +1,6 @@
-<div class="statistique-card">
+<div class="card-header text-center p-2">
+  <span>{{ statistique.titre }} </span>
     <p>{{ statistique.identifiant }}<p>
-    <p>{{ statistique.titre }}</p>
     <p>{{ statistique.valeur }}</p>
-    <button (click)="onDeleteStat()">Supprimer</button>
+    <button class="btn btn-danger" (click)="onDeleteStat()">Supprimer</button>
   </div>

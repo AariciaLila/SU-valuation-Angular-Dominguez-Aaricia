@@ -8,6 +8,9 @@ import { StatistiquesListComponent } from './statistiques-list/statistiques-list
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { PageAjoutComponent } from './page-ajout/page-ajout.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { PageAjoutComponent } from './page-ajout/page-ajout.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

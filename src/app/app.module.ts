@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { StatistiquesListComponent } from './statistiques-list/statistiques-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { PageAjoutComponent } from './page-ajout/page-ajout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatistiquesComponent,
-    StatistiquesListComponent
+    StatistiquesListComponent,
+    HeaderComponent,
+    PageAjoutComponent
   ],
   imports: [
     BrowserModule,
